@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0nyxegv" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.1" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <decision id="dish" name="Which dish should be served ?">
+    <decisionTable id="DecisionTable_031t19t">
+      <input id="Input_1" label="Season">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>season</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0pmki05" label="Total Guest count">
+        <inputExpression id="LiteralExpression_1fnzfrc" typeRef="number">
+          <text>guestCount</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0sgkrp5" label="Restaurant">
+        <inputExpression id="LiteralExpression_1wyj9py" typeRef="string">
+          <text>restaurant</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Dish to serve" name="dish" typeRef="string" />
+      <rule id="DecisionRule_0kv11xy">
+        <inputEntry id="UnaryTests_1m7fpf0">
+          <text>"Fall"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09mcduz">
+          <text>&gt; 1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qownot">
+          <text>"Restaurant1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ummw7h">
+          <text>"Roasted Chicken"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="dish">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
